@@ -14709,6 +14709,255 @@ boolean</p>
 </dd>
 <dt>
  <span class="term">
+ <a id="opt-vim.languages.arduino.enable"></a><a class="term" href="options.html#opt-vim.languages.arduino.enable"><code class="option">vim.languages.arduino.enable</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Whether to enable Arduino support.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+boolean</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">false</code></p>
+
+<p><span class="emphasis"><em>Example:</em></span>
+<code class="literal">true</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/NotAShelf/nvf/blob/main/modules/plugins/languages/arduino.nix" target="_top">
+&lt;nvf/modules/plugins/languages/arduino.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-vim.languages.arduino.lsp.enable"></a><a class="term" href="options.html#opt-vim.languages.arduino.lsp.enable"><code class="option">vim.languages.arduino.lsp.enable</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Whether to enable Arduino LSP support (arduino-language-server).</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+boolean</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">false</code></p>
+
+<p><span class="emphasis"><em>Example:</em></span>
+<code class="literal">true</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/NotAShelf/nvf/blob/main/modules/plugins/languages/arduino.nix" target="_top">
+&lt;nvf/modules/plugins/languages/arduino.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-vim.languages.arduino.lsp.package"></a><a class="term" href="options.html#opt-vim.languages.arduino.lsp.package"><code class="option">vim.languages.arduino.lsp.package</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>arduino-language-server package</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+package</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">&lt;derivation arduino-language-server-0.7.7&gt;</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/NotAShelf/nvf/blob/main/modules/plugins/languages/arduino.nix" target="_top">
+&lt;nvf/modules/plugins/languages/arduino.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-vim.languages.arduino.lsp.arduinoCliPackage"></a><a class="term" href="options.html#opt-vim.languages.arduino.lsp.arduinoCliPackage"><code class="option">vim.languages.arduino.lsp.arduinoCliPackage</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>arduino-cli package</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+package</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">&lt;derivation arduino-cli-1.2.2&gt;</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/NotAShelf/nvf/blob/main/modules/plugins/languages/arduino.nix" target="_top">
+&lt;nvf/modules/plugins/languages/arduino.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-vim.languages.arduino.lsp.clangdPackage"></a><a class="term" href="options.html#opt-vim.languages.arduino.lsp.clangdPackage"><code class="option">vim.languages.arduino.lsp.clangdPackage</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>clangd package</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+package</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">&lt;derivation clang-tools-19.1.7&gt;</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/NotAShelf/nvf/blob/main/modules/plugins/languages/arduino.nix" target="_top">
+&lt;nvf/modules/plugins/languages/arduino.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-vim.languages.arduino.lsp.configPath"></a><a class="term" href="options.html#opt-vim.languages.arduino.lsp.configPath"><code class="option">vim.languages.arduino.lsp.configPath</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Path to the arduino-cli config</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+string</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">&quot;$HOME/.arduino15/arduino-cli.yaml&quot;</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/NotAShelf/nvf/blob/main/modules/plugins/languages/arduino.nix" target="_top">
+&lt;nvf/modules/plugins/languages/arduino.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-vim.languages.arduino.lsp.extraArgs"></a><a class="term" href="options.html#opt-vim.languages.arduino.lsp.extraArgs"><code class="option">vim.languages.arduino.lsp.extraArgs</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Extra arguments passed to arduino-language-server</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+list of string</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">[ ]</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/NotAShelf/nvf/blob/main/modules/plugins/languages/arduino.nix" target="_top">
+&lt;nvf/modules/plugins/languages/arduino.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-vim.languages.arduino.lsp.fqbn"></a><a class="term" href="options.html#opt-vim.languages.arduino.lsp.fqbn"><code class="option">vim.languages.arduino.lsp.fqbn</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Fully Qualified Board Name</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+null or string</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">null</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/NotAShelf/nvf/blob/main/modules/plugins/languages/arduino.nix" target="_top">
+&lt;nvf/modules/plugins/languages/arduino.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-vim.languages.arduino.treesitter.enable"></a><a class="term" href="options.html#opt-vim.languages.arduino.treesitter.enable"><code class="option">vim.languages.arduino.treesitter.enable</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Whether to enable Arduino treesitter.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+boolean</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">false</code></p>
+
+<p><span class="emphasis"><em>Example:</em></span>
+<code class="literal">true</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/NotAShelf/nvf/blob/main/modules/plugins/languages/arduino.nix" target="_top">
+&lt;nvf/modules/plugins/languages/arduino.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-vim.languages.arduino.treesitter.package"></a><a class="term" href="options.html#opt-vim.languages.arduino.treesitter.package"><code class="option">vim.languages.arduino.treesitter.package</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>The arduino treesitter package to use.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+package</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">pkgs.vimPlugins.nvim-treesitter.builtGrammars.arduino</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/NotAShelf/nvf/blob/main/modules/plugins/languages/arduino.nix" target="_top">
+&lt;nvf/modules/plugins/languages/arduino.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
  <a id="opt-vim.languages.assembly.enable"></a><a class="term" href="options.html#opt-vim.languages.assembly.enable"><code class="option">vim.languages.assembly.enable</code>
   </a>
  </span>
