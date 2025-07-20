@@ -41046,7 +41046,8 @@ boolean</p>
 </dt>
 <dd>
 <p>List of treesitter grammars to install. For grammars to be installed properly,
-you must use grammars from <code class="literal">pkgs.vimPlugins.nvim-treesitter.builtGrammars</code>.</p><p>For languages already supported by nvf, you may use
+you must use grammars from <code class="literal">pkgs.vimPlugins.nvim-treesitter.builtGrammars</code>.
+You can use <code class="literal">pkgs.vimPlugins.nvim-treesitter.allGrammars</code> to install all grammars.</p><p>For languages already supported by nvf, you may use
 <code class="option">vim.language.&lt;lang&gt;.treesitter</code> options, which will automatically add
 the required grammars to this.</p>
 
@@ -41056,7 +41057,7 @@ list of package</p>
 <p><span class="emphasis"><em>Default:</em></span>
 <code class="literal">[ ]</code></p>
 
-<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting">pkgs.vimPlugins.nvim-treesitter.builtGrammars; [
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting">with pkgs.vimPlugins.nvim-treesitter.builtGrammars; [
   regex
   kdl
 ];
