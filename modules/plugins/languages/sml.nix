@@ -25,7 +25,7 @@
         mkLuaInline /* lua */ ''
           function(bufnr, on_dir)
             local fname = vim.api.nvim_buf_get_name(bufnr)
-            on_dir(util.root_pattern('millet.toml', '.git', '*.sml')(fname))
+            on_dir(util.root_pattern('millet.toml', '*.cm', '*.mlb', '.git', '*.sml')(fname))
           end
         '';
       settings = {};
