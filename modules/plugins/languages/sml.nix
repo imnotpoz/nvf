@@ -11,6 +11,7 @@
   inherit (lib.types) enum;
   inherit (lib.nvim.types) deprecatedSingleOrListOf;
   inherit (lib.nvim.attrsets) mapListToAttrs;
+  inherit (lib.generators) mkLuaInline;
 
   cfg = config.vim.languages.sml;
 
@@ -20,7 +21,13 @@
       enable = true;
       cmd = [(getExe pkgs.millet)];
       filetypes = ["sml"];
-      root_markers = ["millet.toml" ".git"];
+      root_dir =
+        mkLuaInline /* lua */ ''
+          function(bufnr, on_dir)
+            local fname = vim.api.nvim_buf_get_name(bufnr)
+            on_dir(util.root_pattern('millet.toml', '.git', '*.sml')(fname))
+          end
+        '';
       settings = {};
     };
   };
