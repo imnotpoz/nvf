@@ -34,6 +34,7 @@ in {
     ./r.nix
     ./rust.nix
     ./scala.nix
+    ./sml.nix
     ./sql.nix
     ./svelte.nix
     ./tailwind.nix
