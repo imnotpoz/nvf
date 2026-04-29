@@ -50511,15 +50511,13 @@ and any buffer it may overlap with.</p>
   <div class="option-type">Type: <code>null or (luaInline)</code></div>
   <div class="option-description"><html><head></head><body><p>Clear notification group when LSP server detaches</p>
 </body></html></div>
-  <div class="option-default">Default: <code>{
-  _type = "lua-inline";
-  expr = ''
-    function(client_id)
-      local client = vim.lsp.get_client_by_id(client_id)
-      return client and client.name or nil
-    end
-  '';
-}</code></div>
+  <div class="option-default">Default: <code>default = mkLuaInline ''
+  function(client_id)
+    local client = vim.lsp.get_client_by_id(client_id)
+    return client and client.name or nil
+  end
+'';
+</code></div>
   <div class="option-declared">Declared in: <code><a href="https://github.com/NotAShelf/nvf/blob/main/modules/plugins/visuals/fidget-nvim/fidget.nix" target="_blank">&lt;nvf/modules/plugins/visuals/fidget-nvim/fidget.nix&gt;</a></code></div>
 </div>
 <div class="option" id="option-vim.visuals.fidget-nvim.setupOpts.progress.display.done_icon">
