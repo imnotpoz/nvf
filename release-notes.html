@@ -277,6 +277,11 @@ deprecated and thus was pulled from nixpkgs.
 SCSS/SASS. This also changes the default LSP to <code>some-sass-language-server</code>
 for SCSS/SASS.</p>
 </li>
+<li>
+<p>Split React/TSX from <code>languages.typescript</code> into <code>languages.tsx</code>. This new
+module provides jsx/tsx support. This is a step of cleaning up the Typescript
+module for the future.</p>
+</li>
 </ul>
 <p><a href="https://github.com/caueanjos">CaueAnjos</a></p>
 <ul>
@@ -634,6 +639,9 @@ enabled. Fixes a crash (#1350).</p>
 <p>Added <code>asmfmt</code> and <code>nasmfmt</code> formatters to <code>languages.asm</code>.</p>
 </li>
 <li>
+<p>Added <code>astyle</code>, <code>indent</code> and <code>clang-format</code> to <code>languages.clang</code> formatters.</p>
+</li>
+<li>
 <p>Added <code>biome-check</code> and <code>biome-organize-imports</code> formatters to <code>languages.ts</code>.</p>
 </li>
 <li>
@@ -790,6 +798,10 @@ indentation; e.g. useful for Haskell and PureScript, for which treesitter
 indentation does not work good</li>
 <li>Allow <code>vim.treesitter.context.setupOpts.max_lines</code> to also be given as a
 string in order to allow percentage values like <code>"20%"</code></li>
+</ul>
+<p><a href="https://github.com/roastedcheese">RoastedCheese</a>:</p>
+<ul>
+<li>Fix <code>golangci-lint</code> to lint at the package level.</li>
 </ul>
 <!-- vim: set textwidth=80: -->
 <h1 id="sec-release-0-8">Release 0.8</h1>
