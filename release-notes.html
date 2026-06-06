@@ -283,6 +283,11 @@ module provides jsx/tsx support. This is a step of cleaning up the Typescript
 module for the future.</p>
 </li>
 </ul>
+<p><a href="https://github.com/dathegreat">dathegreat</a>:</p>
+<ul>
+<li>Haskell LSP now defaults to haskell-language-server, haskell-tools based LSP
+support is moved to <code>vim.languages.haskell.extensions.haskell-tools</code></li>
+</ul>
 <p><a href="https://github.com/caueanjos">CaueAnjos</a></p>
 <ul>
 <li>Renamed <code>roslyn_ls</code> to <code>roslyn-ls</code></li>
@@ -290,6 +295,22 @@ module for the future.</p>
 <li>Turned <code>csharpls-extended-lsp-nvim</code> into an extension disabled by default</li>
 </ul>
 <h2 id="sec-release-0-9-changelog">Changelog</h2>
+<p><a href="https://github.com/bovf">bovf</a>:</p>
+<ul>
+<li>Removed the deprecated <code>system_open</code> setup option from <code>nvim-tree.lua</code> to
+avoid startup warnings now that upstream uses <code>vim.ui.open()</code>.</li>
+</ul>
+<p><a href="https://github.com/ErinaYip">ErinaYip</a>:</p>
+<ul>
+<li>Fixed and updated <code>lualine</code> options:
+<ul>
+<li>Enabled the previously unmapped
+<a class="option-reference" href="options.html#option-vim.statusline.lualine.ignoreFocus"><code class="nixos-option">vim.statusline.lualine.ignoreFocus</code></a>.</li>
+<li>Added <a class="option-reference" href="options.html#option-vim.statusline.lualine.disabledFiletypes.statusline"><code class="nixos-option">vim.statusline.lualine.disabledFiletypes.statusline</code></a> and
+<a class="option-reference" href="options.html#option-vim.statusline.lualine.disabledFiletypes.winbar"><code class="nixos-option">vim.statusline.lualine.disabledFiletypes.winbar</code></a>.</li>
+</ul>
+</li>
+</ul>
 <p><a href="https://github.com/SecBear">SecBear</a>:</p>
 <ul>
 <li>Renamed <code>setupOpts.strategies</code> to <code>setupOpts.interactions</code> in the
@@ -366,6 +387,13 @@ hard-coded options as default values.</li>
 <ul>
 <li>Updated nix language plugin to use pkgs.nixfmt instead of
 pkgs.nixfmt-rfc-style</li>
+</ul>
+<p><a href="https://github.com/dathegreat">dathegreat</a>:</p>
+<ul>
+<li>Fixed invalid keys in the haskell-tools configuration</li>
+<li>Split haskell configuration into <code>lsp/presets/haskell-language-server.nix</code> and
+<code>languages/haskell.nix</code></li>
+<li>Made the haskell LSP and formatter configurable</li>
 </ul>
 <p><a href="https://github.com/alfarelcynthesis">alfarel</a>:</p>
 <ul>
@@ -444,6 +472,10 @@ actually correspond to any keybinds.</p>
 <li>
 <p>Allow disabling nvf's vendored keymaps by toggling <code>vendoredKeymaps.enable</code>.</p>
 </li>
+<li>
+<p>Add <a class="option-reference" href="options.html#option-vim.languages.pug.enable"><code class="nixos-option">vim.languages.pug.enable</code></a>, which adds the treesitter grammar and
+enables <code>emmet-ls</code> for pug files.</p>
+</li>
 </ul>
 <p><a href="https://github.com/pyrox0">pyrox0</a>:</p>
 <ul>
@@ -494,6 +526,9 @@ options created via <code>mkGrammarOption</code>.</p>
 </li>
 <li>
 <p>Add <code>emmet-ls</code> to the supported LSPs for all languages it supports.</p>
+</li>
+<li>
+<p>Added <code>phpantom</code> LSP preset and into <code>languages.php</code>.</p>
 </li>
 <li>
 <p>Added <a class="option-reference" href="options.html#option-vim.treesitter.queries"><code class="nixos-option">vim.treesitter.queries</code></a> to support adding custom queries.</p>
@@ -742,6 +777,7 @@ plugin.</li>
 <p><a href="https://github.com/horriblename">horriblename</a>:</p>
 <ul>
 <li>Ignore terminals by default in spell-checking</li>
+<li>Add default error filter to lsp-signature that prevents error spam.</li>
 </ul>
 <p><a href="https://poz.pet">poz</a>:</p>
 <ul>
@@ -1939,7 +1975,7 @@ enabled through <code>vim.languages.css</code> and <code>vim.languages.tailwind<
 and <code>disabled_filetypes</code> through the new options:
 <a class="option-reference" href="options.html#option-vim.statusline.lualine.alwaysDivideMiddle"><code class="nixos-option">vim.statusline.lualine.alwaysDivideMiddle</code></a>,
 <a class="option-reference" href="options.html#option-vim.statusline.lualine.ignoreFocus"><code class="nixos-option">vim.statusline.lualine.ignoreFocus</code></a> and
-<a class="option-reference" href="options.html#option-vim.statusline.lualine.disabledFiletypes"><code class="nixos-option">vim.statusline.lualine.disabledFiletypes</code></a>).</p>
+<a class="option-reference" href="options.html#option-vim.statusline.lualine.disabledFiletypes.statusline"><code class="nixos-option">vim.statusline.lualine.disabledFiletypes.statusline</code></a>).</p>
 </li>
 <li>
 <p>Updated all plugin inputs to their latest versions (<strong>21.04.2024</strong>) - this
