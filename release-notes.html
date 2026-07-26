@@ -91,7 +91,10 @@
             <div class="sidebar-section-content">
               <ul class="toc-list">
                 <li><a href="#ch-release-notes">Release Notes</a>
-<li><a href="#sec-release-0-9">Release 0.9</a>
+<li><a href="#sec-release-26-12">Release 26.12</a>
+<ul><li><a href="#breaking-changes">Breaking changes</a>
+<li><a href="#sec-release-26-12-changelog">Changelog</a>
+</ul><li><a href="#sec-release-26-07">Release 26.07</a>
 <ul><li><a href="#breaking-changes">Breaking changes</a>
 <li><a href="#sec-release-0-9-changelog">Changelog</a>
 </ul><li><a href="#sec-release-0-8">Release 0.8</a>
@@ -129,9 +132,20 @@
         <main class="content"><html><head></head><body><h1 id="ch-release-notes">Release Notes</h1>
 <p>This section lists the release notes for tagged version of <strong>nvf</strong> and the
 current main current main branch</p>
-<h1 id="sec-release-0-9">Release 0.9</h1>
+<h1 id="sec-release-26-12">Release 26.12</h1>
+<h2 id="breaking-changes">Breaking changes</h2>
+<!-- - Upgrade to nixpkgs 26.11. -->
+<ul>
+<li>Dropping all old deprecations from 26.07 backwards. This is done to keep the
+codebase maintainable.</li>
+</ul>
+<h2 id="sec-release-26-12-changelog">Changelog</h2>
+<h1 id="sec-release-26-07">Release 26.07</h1>
 <h2 id="breaking-changes">Breaking changes</h2>
 <ul>
+<li>
+<p>Changing the release model to CalVer.</p>
+</li>
 <li>
 <p>Upgrade to nixpkgs 26.06.</p>
 </li>
@@ -174,6 +188,17 @@ upstream codecompanion.nvim v19 rename. If you set options like
 </ul>
 <p><a href="https://github.com/snoweuph">Snoweuph</a></p>
 <ul>
+<li>
+<p>Added <code>position</code> option to additional runtime paths, allowing for prepending
+paths, rather than just appending.</p>
+</li>
+<li>
+<p>Added required field <code>loadtype</code> for entries into
+<a class="option-reference" href="options.html#option-vim.treesitter.queries"><code class="nixos-option">vim.treesitter.queries</code></a>, to allow for real overriding of queries.</p>
+</li>
+<li>
+<p>Moved all angular related stuff into its own language module.</p>
+</li>
 <li>
 <p>Remove <code>mind.nvim</code>. This plugin doesn't exist anymore. The original author
 deleted all their GitHub repositories and moved to
@@ -307,6 +332,11 @@ the formatter binary instead.</p>
 <code>prettier</code> instead.</p>
 </li>
 </ul>
+<p><a href="https://github.com/horriblename">horriblename</a>:</p>
+<ul>
+<li>Change default linter for C/C++ to clangtidy, as it is more common and
+enforces more rules outside of Google's coding style</li>
+</ul>
 <p><a href="https://github.com/dathegreat">dathegreat</a>:</p>
 <ul>
 <li>Haskell LSP now defaults to haskell-language-server, haskell-tools based LSP
@@ -317,6 +347,11 @@ support is moved to <code>vim.languages.haskell.extensions.haskell-tools</code><
 <li>Renamed <code>roslyn_ls</code> to <code>roslyn-ls</code></li>
 <li>Turned <code>omnisharp-extended-lsp-nvim</code> into an extension disabled by default</li>
 <li>Turned <code>csharpls-extended-lsp-nvim</code> into an extension disabled by default</li>
+</ul>
+<p><a href="https://github.com/caueanjos">sjcobb2022</a></p>
+<ul>
+<li>Rust module is now no longer dependant on <code>rustaceanvim</code> by default. Use
+<code>vim.languages.rust.extensions.rustaceanvim.enable</code> if needed.</li>
 </ul>
 <h2 id="sec-release-0-9-changelog">Changelog</h2>
 <p><a href="https://github.com/bovf">bovf</a>:</p>
@@ -558,6 +593,31 @@ formatter.</p>
 </ul>
 <p><a href="https://github.com/snoweuph">Snoweuph</a></p>
 <ul>
+<li>Split of <code>zsh</code> from <code>languages.bash</code> into its own language module.</li>
+</ul>
+<ul>
+<li>
+<p>Add <a href="https://github.com/stevearc/conform.nvim/blob/master/doc/advanced_topics.md#injected-language-formatting-code-blocks"><code>injected</code> formatter</a> to all language modules, to allow for formatting of
+injections via conform, like Markdown code blocks or some multiline strings in
+nix.</p>
+</li>
+<li>
+<p>Make <code>query</code> injections in <code>nix</code> files combined, to fix highlighting problems,
+when injecting inside multiline strings.</p>
+</li>
+<li>
+<p>Telling the <code>vscode-json-language-server</code> that <code>json5</code> is <code>jsonc</code> instead of
+the default fallback of <code>json</code>, for more accurate results.</p>
+</li>
+<li>
+<p>Fix automatic path resolution for JLS, to always be absolute.</p>
+</li>
+<li>
+<p>Added <a class="option-reference" href="options.html#option-vim.healthchecks"><code class="nixos-option">vim.healthchecks</code></a>.</p>
+</li>
+<li>
+<p>Added healthcheck to clipboard providers.</p>
+</li>
 <li>
 <p>Added <a class="option-reference" href="options.html#option-vim.formatter.conform-nvim.presets.just.enable"><code class="nixos-option">vim.formatter.conform-nvim.presets.just.enable</code></a> for justfile
 formatting.</p>
@@ -570,10 +630,16 @@ formatting.</p>
 <p>Added <a class="option-reference" href="options.html#option-vim.languages.java.dap.enable"><code class="nixos-option">vim.languages.java.dap.enable</code></a> with the <code>jls</code> DAP.</p>
 </li>
 <li>
+<p>Fix tailwind LSP running on non tailwind projects.</p>
+</li>
+<li>
 <p>Use nvf nix Tree-sitter injections in the docs.</p>
 </li>
 <li>
 <p>Added Mago for PHP formatting and linting.</p>
+</li>
+<li>
+<p>Added ferris.nvim as a rust extensions.</p>
 </li>
 <li>
 <p>Allow the usage of <code>pks.tree-sitter-grammars</code> in
@@ -585,6 +651,12 @@ options created via <code>mkGrammarOption</code>.</p>
 </li>
 <li>
 <p>Added <code>gitlab-ci-ls</code>.</p>
+</li>
+<li>
+<p>Add <code>ts-query-ls</code> as a conform.nvim formatter.</p>
+</li>
+<li>
+<p>Added formatting to <code>languages.query</code>.</p>
 </li>
 <li>
 <p>Added <code>phpantom</code> LSP preset and into <code>languages.php</code>.</p>
@@ -628,7 +700,16 @@ This is mostly use full for Markdown code block injections.</p>
 <p>Fix <code>astro-language-server</code> missing typescript.</p>
 </li>
 <li>
+<p>Fix typo in <code>biome-organize-imports</code> formatting preset.</p>
+</li>
+<li>
 <p>Fixed broken filetypes.</p>
+</li>
+<li>
+<p>Added Treesitter injections for <code>sqlx</code> in the <code>languages.rust</code> module.</p>
+</li>
+<li>
+<p>Allow bundling the Treesitter CLI.</p>
 </li>
 <li>
 <p>Added <code>vim.lsp.presets.&lt;name&gt;</code> to contain LSP configurations. This allows for
@@ -767,6 +848,9 @@ enabled. Fixes a crash (#1350).</p>
 </li>
 <li>
 <p>Added <code>languages.vue</code>.</p>
+</li>
+<li>
+<p>Added <code>languages.query</code>.</p>
 </li>
 <li>
 <p>Add <code>languages.fluent</code> using the official plugin. This only provides
@@ -941,6 +1025,12 @@ string in order to allow percentage values like <code>"20%"</code></li>
 <li>Add <code>prettier</code> and <code>prettierd</code> as supported formatters to
 <code>vim.languages.json</code>.</li>
 </ul>
+<p><a href="https://github.com/sjcobb2022">sjcobb2022</a></p>
+<ul>
+<li>Modernize rust toolchain by defaulting to a <code>rustaceanvim</code> free default
+configuration. Enabled via configuration
+<code>vim.languages.rust.extensions.rustaceanvim.enable</code>.</li>
+</ul>
 <p><a href="https://github.com/BrockoliniMorgan">BrockoliniMorgan</a></p>
 <ul>
 <li>Renamed
@@ -949,6 +1039,14 @@ string in order to allow percentage values like <code>"20%"</code></li>
 <p><a href="https://github.com/marciosobel">marciosobel</a></p>
 <ul>
 <li>Added <code>goimports</code> as supported formatters to <code>vim.languages.go</code>.</li>
+</ul>
+<p><a href="https://github.com/kruziikrel13">kruziikrel13</a></p>
+<ul>
+<li>Added persisted as session plugin to vim.session as <code>vim.session.persisted</code></li>
+</ul>
+<p><a href="https://github.com/adam01110">Adam0</a>:</p>
+<ul>
+<li>Add <a href="https://github.com/vyfor/cord.nvim">cord.nvim</a> plugin in <code>vim.presence.cord</code> with <code>enable</code> and <code>setupOpts</code></li>
 </ul>
 <!-- vim: set textwidth=80: -->
 <h1 id="sec-release-0-8">Release 0.8</h1>
@@ -2656,7 +2754,10 @@ allows for ordering of the config. Usage is the same is in home-manager's
           <h3>On this page</h3>
           <ul class="page-toc-list">
             <li><a href="#ch-release-notes">Release Notes</a>
-<li><a href="#sec-release-0-9">Release 0.9</a>
+<li><a href="#sec-release-26-12">Release 26.12</a>
+<ul><li><a href="#breaking-changes">Breaking changes</a>
+<li><a href="#sec-release-26-12-changelog">Changelog</a>
+</ul><li><a href="#sec-release-26-07">Release 26.07</a>
 <ul><li><a href="#breaking-changes">Breaking changes</a>
 <li><a href="#sec-release-0-9-changelog">Changelog</a>
 </ul><li><a href="#sec-release-0-8">Release 0.8</a>
